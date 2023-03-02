@@ -37,3 +37,10 @@ resource "aci_bridge_domain" "bd_192_168_1_0" {
   relation_fv_rs_ctx = aci_vrf.main.id
 }
 
+resource "aci_subnet" " subnet_192_168_1_0" {
+    parent_dn        = aci_bridge_domain.bd_192_168_1_0.id
+    description      = "subnet"
+    ip               = "192.168.1.0/24"
+    annotation       = "tag_subnet"
+    scope            = ["private", "shared"]
+}
