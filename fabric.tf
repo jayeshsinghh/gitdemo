@@ -18,7 +18,7 @@ provider "aci" {
 }
 
 resource "aci_tenant" "demo" {
-  name        = prod-tenant
+  name        = prod1-tenant
   description = "This is a demo tenant created from Terraform"
 }
 
